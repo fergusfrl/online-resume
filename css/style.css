@@ -74,6 +74,7 @@ body {
 
 /* SECRET HEADER */
 #secret-header{
+  display: none;
   position: fixed;
   width: 100%;
   margin: -72px 0 0 0;
@@ -135,7 +136,7 @@ body {
 /* TESTIMONIAL */
 #testimonial {
   margin: 20px 10%;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 #testimonial p {
@@ -147,13 +148,71 @@ body {
 }
 
 /* VIDEO */
+.play-video {
+  cursor: pointer;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.play-video:hover {
+  color: #e37222;
+}
+
+.click-to-play .icon {
+  margin: 0;
+  font-size: 50px;
+}
+
+#video-holder {
+  margin-left: 27%;
+  border: 2px solid #e37222;
+  border-radius: 40px;
+}
+
 #video {
-  margin-top: 40px;
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
 }
 
 #video-player {
+  margin: 10% auto;
   border: 2px solid #e37222;
   border-radius: 40px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from{opacity :0}
+  to{opacity: 1}
+}
+
+/* SKILLS */
+#skills {
+  color: #eee;
+}
+
+/* PROJECTS */
+#projects {
+  color: #eee;
+}
+
+#projects a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#projects a:hover {
+  color: #e37222;
 }
 
 /* CONTACT */
