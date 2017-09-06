@@ -197,22 +197,151 @@ body {
 }
 
 /* SKILLS */
-#skills {
-  color: #eee;
+#resume .container {
+  border-radius: 5px;
+    width: 750px;
+    margin: 0 auto;
+    font-size: 30px;
+    background: #ccc;
+    height: 780px;
+    font-family: 'Monaco', 'Courier New';
+    text-align: left;
+    font-size: 13px;
+    color: #fafafa;
+}
+
+#console {
+  font-family: 'Monaco', 'Courier New';
+  text-align: left;
+  font-size: 13px;
+  color: #fafafa;
+  width: 750px;
+  padding: 40px;
+  height: 780px;
+  margin: 0 auto;
+  background: #383737;
+}
+
+#console .answer {
+  color: #ccc;
+}
+
+#console .blinker {
+  font-weight: 100;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fafafa;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fafafa;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fafafa;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fafafa;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fafafa;
+  }
 }
 
 /* PROJECTS */
 #projects {
-  color: #eee;
+  color: #fafafa;
+}
+
+#projects img {
+  width: 100%;
+}
+
+#projects h4 {
+  color: #333;
+  padding: 30px 0 10px 0;
+}
+
+#projects p {
+  color: #333;
+  margin: 20px 20px !important;
+  padding-bottom: 25px;
+}
+
+.card {
+  padding-left: 26px;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  width: 500px;
+  height: 375px;
+}
+
+.front {
+  background: #eee;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: rotateX(0deg);
+}
+
+.back {
+  background: #eee;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  transform: rotateX(-180deg);
+  transition: all 0.5s ease-out;
+  border: 2px solid #e37222;
 }
 
 #projects a {
   text-decoration: none;
-  color: inherit;
+  color: #e37222;
 }
 
 #projects a:hover {
-  color: #e37222;
+  color: #07889b;
 }
 
 /* CONTACT */

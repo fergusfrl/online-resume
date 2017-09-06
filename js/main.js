@@ -83,60 +83,19 @@ function outsideClick(e){
 
 // Scroll animations
 window.sr = ScrollReveal();
-sr.reveal('#photo-container', {
-  duration: 1500,
-  origin: 'left'
-});
-sr.reveal('.info', {
-  duration: 1500,
-  origin: 'right',
-  delay: 500
-});
 sr.reveal('#testimonial', {
   duration: 1500,
   origin: 'bottom'
 });
-sr.reveal('#video', {
-  duration: 2000,
-  origin: 'bottom',
-  viewFactor: 0.8
-});
-sr.reveal('#s1', {
-  duration: 1000,
-  origin: 'left'
-});
-sr.reveal('#s2', {
-  duration: 1000,
-  origin: 'right',
-  delay: 500
-});
-sr.reveal('#s3', {
-  duration: 1000,
-  origin: 'left'
-});
-sr.reveal('#s4', {
-  duration: 1000,
-  origin: 'right',
-  delay: 500
-});
-sr.reveal('#s5', {
-  duration: 1000,
-  origin: 'left'
-});
-sr.reveal('#s6', {
-  duration: 1000,
-  origin: 'right',
-  delay: 500
-});
-sr.reveal('#p1', {
-  duration: 1500,
-  origin: 'left'
-});
-sr.reveal('#p2', {
-  duration: 1500,
-  origin: 'right',
-  delay: 500
-});
+
+
+
+// Blinker (typed js)                    MIGHT USE FOR TITLE
+/*var typed = new Typed('.blinker', {
+  strings: ["hello", "world"],
+  typeSpeed: 100
+});*/
+
 
 
 // Smooth Scrolling from nav bar
@@ -147,7 +106,7 @@ $(function(){
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if(target.length){
         $('html, body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top-70
         }, 1000);
         return false;
       }
@@ -170,4 +129,12 @@ $(document).mousemove(function(e){
   } else {
     $('#secret-header').css('display', 'none');
   }
+});
+
+
+
+// Flip card
+$('.card').flip({
+  axis: 'y',
+  trigger: 'click'
 });
