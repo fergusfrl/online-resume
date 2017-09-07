@@ -90,14 +90,6 @@ sr.reveal('#testimonial', {
 
 
 
-// Blinker (typed js)                    MIGHT USE FOR TITLE
-/*var typed = new Typed('.blinker', {
-  strings: ["hello", "world"],
-  typeSpeed: 100
-});*/
-
-
-
 // Smooth Scrolling from nav bar
 $(function(){
   $('a[href*="#"]:not([href="#"])').click(function(){
@@ -116,19 +108,14 @@ $(function(){
 
 
 
-// Open header when mouse in near top of screen
-$(document).mousemove(function(e){
-  var vertical = e.screenY;
-
-  if($(window).scrollTop() >= 72){
-    if(vertical <= 140){
-      $('#secret-header').slideDown("slow");
-    } else {
-      $('#secret-header').slideUp("slow");
-    }
-  } else {
-    $('#secret-header').css('display', 'none');
-  }
+// Open header on scroll over
+$(document).ready(function(){
+  $('#secret-header').mouseover(function(){
+    $(this).addClass("visible");
+  });
+  $('#secret-header').mouseout(function(){
+    $(this).removeClass("visible");
+  });
 });
 
 
