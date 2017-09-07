@@ -29,56 +29,42 @@ secretTitle.addEventListener('click', function(){
 });
 
 
-
-// Plays video when visible or when play is clicked
-var videoChecker = document.getElementById('video-checker')
-var video = document.getElementById('video-player');
-var wrapper = document.getElementById('video');
-var playVid = document.getElementsByClassName('play-video')
-var scrollFlag = true;
-// Adds event listener to scrolling
-window.onscroll = function(){
-  if(checkVisible(videoChecker)){
-    if(scrollFlag){
-      openModal();
-      video.play();
-      scrollFlag = false;
-    }
-  } else {
-    video.pause();
-    closeModal();
-  }
-};
-// Listen for outside click
-window.addEventListener('click', function(){
-  video.pause();
-  closeModal();
+// Video Player Mouse Over
+$('#play').mouseover(function(){
+  $('#video-player').addClass('fade');
 });
-for(var i = 0; i < playVid.length; i++){
-  console.log(playVid[i]);
-  playVid[i].addEventListener('click', function(){
-    openModal();
-    video.play();
-  });
-}
-// Checks elms visability on screen
-function checkVisible(elm) {
-  var rect = elm.getBoundingClientRect();
-  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-}
-function openModal(){
-  wrapper.style.display = 'block';
-}
-function closeModal(){
-  wrapper.style.display = 'none';
-}
-function outsideClick(e){
-  if(e.target != video){
-    wrapper.style.display = 'none';
-  }
-}
+$('#play').mouseout(function(){
+  $('#video-player').removeClass('fade');
+});
 
+// video-player Play/Pause
+$('#play').click(function(){
+  if($('#video-player').get(0).paused){
+    $('#video-player').get(0).play()
+    $('#video-player').removeClass('fade');
+    $('#togglePlay').removeClass('fa fa-play-circle');
+    $('#togglePlay').addClass('fa fa-pause-circle');
+    $('#play').css('opacity', '0');
+  } else {
+    $('#video-player').get(0).pause()
+    $('#video-player').addClass('fade');
+    $('#togglePlay').removeClass('fa fa-pause-circle');
+    $('#togglePlay').addClass('fa fa-play-circle');
+    $('#play').css('opacity', '0.7');
+  }
+});
+
+// Finished Playing
+$('#video-player').on('ended', function(){
+  $('#togglePlay').removeClass("fa fa-pause-circle");
+  $('#togglePlay').addClass("fa fa-play-circle");
+  $('#play').css('opacity', '0.7');
+});
+
+// Video Progress Bar
+$('#video-player').on('timeupdate', function(){
+  console.log($('#video-player').get(0).currentTime);
+});
 
 
 // Scroll animations

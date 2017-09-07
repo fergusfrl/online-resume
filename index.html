@@ -16,6 +16,9 @@
   <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
 
+  <!-- ICON -->
+  <link rel="icon" href="img/icon.png">
+
 </head>
 <body>
 
@@ -33,7 +36,7 @@
             <nav id="navbar">
               <ul>
                 <li><a href="#main-header">Home</a></li>
-                <li><a href="#click-to-play">Intro</a></li>
+                <li><a href="#video">Intro</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
               </ul>
@@ -54,7 +57,7 @@
             <nav id="navbar">
               <ul>
                 <li><a href="#main-header">Home</a></li>
-                <li><a href="#click-to-play">Intro</a></li>
+                <li><a href="#video">Intro</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
               </ul>
@@ -70,17 +73,15 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 center-xs center-sm center-md center-lg">
             <div id="photo-container">
-              <img src="img/profile.png">
+              <img src="img/profile.jpg" align="middle">
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 center-xs center-sm center-md center-lg">
             <div class="info">
               <h3>Hello World!</h3>
-              <p>Getting into the outdoors - pushing myself both physically and mentally has always been - and will continue to be a mantra for my life.</p>
-
-              <p>Recently University study and part time jobs have been keeping me indoors but that is an environment where I still strive for excellence and focus on improving and challenging myself.</p>
-
-              <p>I love making new friends and meeting new people both professionally and socially. I work well in a team and am happy to take a leading role - a position outdoors pursuits have equipped me for well.</p>
+              <p>I'm Fergus. I'm a software developer and a programmer. I am in my final year of computer science at the University of Otago. I also have a degree in geology! Currently I am looking for a job in the IT industry.</p>
+              <p>I am an outdoor enthusiast, particularly when it comes to whitewater kayaking. I am often away on weekend trips to all corners of our beautiful country. I've found that pushing myself physically and mentally in these outdoor environments allows me to grow as a person.</p>
+              <p>I apply these outdoor skills - maturity, management, resoursfulness and hard yacker - to all aspects of my personal and professional life.</p>
             </div>
           </div>
         </div>
@@ -91,7 +92,7 @@
 
     <!-- TESTIMONIAL -->
     <section id="testimonial">
-      <br><br><br>
+      <br><br>
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -102,44 +103,39 @@
       </div>
     </section>
 
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br>
 
-    <!-- VIDEO PLACEHOLDER-->
-    <div id="click-to-play" class="click-to-play">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-xs center-sm center-md center-lg play-video">
-            <p>Play Intro Video</p>
-            <p class="icon"><i class="fa fa-play-circle"></i></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIDEO MODAL -->
-    <div id="video-checker"></div>
+    <!-- VIDEO -->
     <section id="video">
+      <br>
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-xs center-sm center-md center-lg">
             <div class="video-wrapper">
-              <video  id=video-player width="700" src="video/intro.mp4"></video>
+              <div class="speaker"></div>
+              <div class="home-btn">
+                <div class="home-sqr"></div>
+              </div>
+              <video  id=video-player src="video/intro.mp4" type="video/mp4"></video>
+              <div class="video-overlay">
+                <p id="play"><i id="togglePlay" class="fa fa-play-circle"></i></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <br><br><br><br>
+    <br><br><br>
 
     <!-- TESTIMONIAL -->
     <section id="testimonial">
-      <br><br><br>
+      <br>
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam, voluptate rem doloribus facere quibusdam exercitationem officia dolorum voluptas deleniti."</p>
-            <p>- Andrew Trotman, University of Otago</p>
+            <p>- Christina Riesselman, University of Otago</p>
           </div>
         </div>
       </div>
@@ -171,11 +167,15 @@
           <br><br>
           > Fergus.languages_frontEnd
           <br>
-          <span class="answer">&nbsp;&nbsp;=> ["HTML", "CSS", "Javascript"]</span>
+          <span class="answer">&nbsp;&nbsp;=> ["HTML", "CSS", "js", "jQuery"]</span>
           <br><br>
           > Fergus.languages_backEnd
           <br>
-          <span class="answer">&nbsp;&nbsp;=> ["Python", "Java", "C", "C++", "Matlab", "R", "PostgreSQL", "SQL"]</span>
+          <span class="answer">&nbsp;&nbsp;=> ["Python", "Java", "C", "C++", "PostgreSQL", "SQL", "Matlab", "R"]</span>
+          <br><br>
+          > Fergus.skills
+          <br>
+          <span class="answer">&nbsp;&nbsp;=> ["Communication", "Leadership", "Teamwork", "Professionalism"]</span>
           <br><br>
           > Fergus.experience
           <br>
@@ -185,7 +185,17 @@
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startDate: "Nov, 2016",
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endDate: "Dec, 2017"
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endDate: "Mar, 2017"
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Headfirst Travel {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role: "Cruise Coordinator",
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startDate: "Oct, 2015",
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endDate: "Mar, 2016"
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
             <br><br>
@@ -207,7 +217,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam, voluptate rem doloribus facere quibusdam exercitationem officia dolorum voluptas deleniti."</p>
+            <p class="quote">"Fergus is a capable and well organised worker. Rarely do I see new employees take to customer service and relations so quickly or effectively. Our clients love Fergus which speaks volumes to his personality and work ethic."</p>
             <p>- Ralph Davis, HeadFirst Travel</p>
           </div>
         </div>
@@ -227,65 +237,72 @@
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 center-xs center-sm center-md center-lg">
-            <div class="card">
-              <div class="front">
-                <div class="img-wrapper">
-                  <img src="img/oucc.png">
+            <div class="card-wrapper">
+              <div class="card">
+                <div class="front">
+                  <div class="img-wrapper">
+                    <img src="img/oucc.png">
+                  </div>
+                  <p>OUCC Website</p>
                 </div>
-                <p>OUCC Website</p>
-              </div>
-              <div class="back">
-                <h4>OUCC Website</h4>
-                <p>Website built for the Otago University Canoe Club. Developed using html, css, javascript and php. This website went live on 06/09/2017 and is currently in use by members. I am incredibly proud that people are using and enjoying this site because it took a lot of work</p>
-                <a href="https://www.nzriverflows.com/OUCC/index.html" target="_blank">Click here to take a look!</a>
+                <div class="back">
+                  <h4>OUCC Website</h4>
+                  <p>Website built for the Otago University Canoe Club. Developed using html, css, javascript and php. This website went live on 06/09/2017 and is currently in use by members. I am incredibly proud that people are using and enjoying this site because it took a lot of work</p>
+                  <a href="https://www.nzriverflows.com/OUCC/index.html" target="_blank">Click here to take a look!</a>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 center-xs center-sm center-md center-lg">
-            <div class="card">
-              <div class="front">
-                <div class="img-wrapper">
-                  <img src="img/nzriverflows.png">
+            <div class="card-wrapper">
+              <div class="card">
+                <div class="front">
+                  <div class="img-wrapper">
+                    <img src="img/nzriverflows.png">
+                  </div>
+                  <p>NZ River Flows</p>
                 </div>
-                <p>NZ River Flows</p>
-              </div>
-              <div class="back">
-                <h4>NZ River Flows</h4>
-                <p>My first website! I jumped in the deep end with learning html, css and javascript. The site retrieves flow data from regional council databases and displays them on a map. Markers are colour coded depending on whether they are able to be paddled or not. This was an exciting project which I will be continuing with in the future.</p>
-                <a href="https://www.nzriverflows.com/nzriverflows/home.html" target="_blank">Click here to take a look!</a>
+                <div class="back">
+                  <h4>NZ River Flows</h4>
+                  <p>My first website! I jumped in the deep end with learning html, css and javascript. The site retrieves flow data from regional council databases and displays them on a map. Markers are colour coded depending on whether they are able to be paddled or not. This was an exciting project which I will be continuing with in the future.</p>
+                  <a href="https://www.nzriverflows.com/nzriverflows/home.html" target="_blank">Click here to take a look!</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <br><br><br>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 center-xs center-sm center-md center-lg">
-            <div class="card">
-              <div class="front">
-                <div class="img-wrapper">
-                  <img src="img/preload.png">
+            <div class="card-wrapper">
+              <div class="card">
+                <div class="front">
+                  <div class="img-wrapper">
+                    <img src="img/preload.png">
+                  </div>
+                  <p>PreLoad</p>
                 </div>
-                <p>PreLoad</p>
-              </div>
-              <div class="back">
-                <h4>Preload</h4>
-                <p>Preload is my group project for COSC345 - Software Engineering, at the University of Otago. Preload is an iOS app that finds and calculates the best 'dollar to alcohol' percentage in your area. The code is written in C and wrapped in swift to function on iOS devices. It's a fun project and I've learned heaps!</p>
-                <a href="https://github.com/teamalpha345/PreLoad-1.1.2" target="_blank">Click here to take a look at the GitHub page!</a>
+                <div class="back">
+                  <h4>Preload</h4>
+                  <p>Preload is my group project for COSC345 - Software Engineering, at the University of Otago. Preload is an iOS app that finds and calculates the best 'dollar to alcohol' percentage in your area. The code is written in C and wrapped in swift to function on iOS devices. It's a fun project and I've learned heaps!</p>
+                  <a href="https://github.com/teamalpha345/PreLoad-1.1.2" target="_blank">Click here to take a look at the GitHub page!</a>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 center-xs center-sm center-md center-lg">
-            <div class="card">
-              <div class="front">
-                <div class="img-wrapper">
-                  <img src="img/spagobi.png">
+            <div class="card-wrapper">
+              <div class="card">
+                <div class="front">
+                  <div class="img-wrapper">
+                    <img src="img/spagobi.png">
+                  </div>
+                  <p>BI Dashboards</p>
                 </div>
-                <p>BI Dashboards</p>
-              </div>
-              <div class="back">
-                <h4>BI Dashboards</h4>
-                <p>My project at TracMap (see past experience), was to develop a BI dashboard solution for clients to use. The software I used was SpagoBI, an open source BI platform. Using this tool, I incorpurated information from TracMaps database to display relavent and percise information in a user friendly manner.</p>
-                <p>This project is property of TracMap</p>
+                <div class="back">
+                  <h4>BI Dashboards</h4>
+                  <p>My project at TracMap (see past experience), was to develop a BI dashboard solution for clients to use. The software I used was SpagoBI, an open source BI platform. Using this tool, I incorpurated information from TracMaps database to display relavent and percise information in a user friendly manner.</p>
+                  <p>This project is property of TracMap</p>
+                </div>
               </div>
             </div>
           </div>
@@ -293,16 +310,16 @@
       </div>
     </section>
 
-    <br><br><br><br>
+
 
     <!-- TESTIMONIAL -->
     <section id="testimonial">
-      <br><br><br>
+      <br>
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <p class="quote">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam, voluptate rem doloribus facere quibusdam exercitationem officia dolorum voluptas deleniti."</p>
-            <p>- Niamh Matthews, OUCC President, 2017</p>
+            <p>- Niamh Matthews, 2017 OUCC President</p>
           </div>
         </div>
       </div>
@@ -314,7 +331,7 @@
     <section id="contact">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center-xs center-sm">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-xs center-sm start-md start-lg">
             <h4>Contact Me</h4>
             <ul>
               <li><i class="fa fa-phone"></i> (027) 211 8041</li>
@@ -322,21 +339,25 @@
               <li><i class="fa fa-map"></i> 10 Forfar Street, Dunedin, New Zealand</li>
             </ul>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center-xs center-sm center-md center-lg">
-            <h4>Projects</h4>
-            <ul>
-              <li><a href="https://www.nzriverflows.com/OUCC/index.html" target="_blank">OUCC Website</a></li>
-              <li><a href="https://www.nzriverflows.com/nzriverflows/home.html" target="_blank">NZ River Flows</a></li>
-              <li><a href="https://github.com/teamalpha345/PreLoad-1.1.2" target="_blank">PreLoad</a></li>
-            </ul>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-xs center-sm center-md center-lg">
+            <div class="left-align">
+              <h4>Online</h4>
+              <ul>
+                <li><a href="https://www.facebook.com/fergus.farrell.12" target="_blank"><i class="fa fa-facebook-square"></i> facebook</a></li>
+                <li><a href="https://www.linkedin.com/in/fergusfrl/" target="_blank"><i class="fa fa-linkedin"></i> linkedin</a></li>
+                <li><a href="https://github.com/fergusfrl" target="_blank"><i class="fa fa-github-square"></i> github</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center-xs center-sm center-md center-lg">
-            <h4>Online</h4>
-            <ul>
-              <li><a href="https://www.facebook.com/fergus.farrell.12" target="_blank"><i class="fa fa-facebook-square"></i> facebook</a></li>
-              <li><a href="https://www.linkedin.com/in/fergusfrl/" target="_blank"><i class="fa fa-linkedin"></i> linkedin</a></li>
-              <li><a href="https://github.com/fergusfrl" target="_blank"><i class="fa fa-github-square"></i> github</a></li>
-            </ul>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-xs center-sm center-md center-lg">
+            <div class="left-align">
+              <h4>Projects</h4>
+              <ul>
+                <li><a href="https://www.nzriverflows.com/OUCC/index.html" target="_blank">OUCC Website</a></li>
+                <li><a href="https://www.nzriverflows.com/nzriverflows/home.html" target="_blank">NZ River Flows</a></li>
+                <li><a href="https://github.com/teamalpha345/PreLoad-1.1.2" target="_blank">PreLoad</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
