@@ -6,26 +6,15 @@ particlesJS.load('particles-js', 'particles.json', function(){
 
 
 
-// Change title on click
-var title = document.getElementById('interests');
-var secretTitle = document.getElementById('secret-interests');
-var index = 1;
-var titles = ["Software Developer", "Geologist", "Kayaker", "Pokemon Master", "Shirt Enthusiast", "Ameature Nugget Eater", "Aspiring Stubble Grower"];
-title.addEventListener('click', function(){
-  if(index >= titles.length){
-    index = 0;
+// Change title via typed js
+var typed = new Typed('#interests', {
+  strings: [" ", "Software Developer^1000", "Geolog^100ist^200", "K^200ayaker", "Software Dev^100eloper^1000.^900"],
+  typeSpeed: 90,
+  backSpeed: 40,
+  backDelay: 500,
+  onComplete: (self) => {
+    $('.typed-cursor').css('opacity', '0');
   }
-  title.innerHTML = titles[index];
-  secretTitle.innerHTML = titles[index];
-  index++;
-});
-secretTitle.addEventListener('click', function(){
-  if(index >= titles.length){
-    index = 0;
-  }
-  title.innerHTML = titles[index];
-  secretTitle.innerHTML = titles[index];
-  index++;
 });
 
 
@@ -45,13 +34,22 @@ $('#play').click(function(){
     $('#togglePlay').removeClass('fa fa-play-circle');
     $('#togglePlay').addClass('fa fa-pause-circle');
     $('#play').css('opacity', '0');
+    $('#video-title').css('opacity', '0')
   } else {
     $('#video-player').get(0).pause()
     $('#video-player').addClass('fade');
     $('#togglePlay').removeClass('fa fa-pause-circle');
     $('#togglePlay').addClass('fa fa-play-circle');
     $('#play').css('opacity', '0.7');
+    $('#video-title').css('opacity', '1')
   }
+});
+
+$('#play').mouseover(function(){
+  $('#video-title').css('color', '#e37222');
+});
+$('#play').mouseout(function(){
+  $('#video-title').css('color', '#323232');
 });
 
 // Finished Playing
@@ -59,11 +57,14 @@ $('#video-player').on('ended', function(){
   $('#togglePlay').removeClass("fa fa-pause-circle");
   $('#togglePlay').addClass("fa fa-play-circle");
   $('#play').css('opacity', '0.7');
+  $('#video-title').css('opacity', '1');
+  $('.progress-bar').css('width', '0');
 });
 
 // Video Progress Bar
 $('#video-player').on('timeupdate', function(){
-  console.log($('#video-player').get(0).currentTime);
+  var percentComplete = $('#video-player').get(0).currentTime / $('#video-player').get(0).duration * 82;
+  $('.progress-bar').css('width', percentComplete+'%');
 });
 
 

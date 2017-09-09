@@ -37,16 +37,15 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  /*background-color: #07889b;*/
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
   background: #07889b; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #07889b , #207582); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #07889b, #207582); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #07889b, #207582); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #07889b , #207582); /* Standard syntax */
+  background: -webkit-linear-gradient(left, #07889b , #00688b); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #07889b, #00688b); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #07889b, #00688b); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #07889b , #00688b); /* Standard syntax */
 }
 
 .content {
@@ -67,9 +66,58 @@ body {
   color: #333;
 }
 
-#interests, #secret-interests {
-  cursor: pointer;
-  transition: 5s;
+.typed-cursor {
+  color: #333;
+  -webkit-animation: 1s cursorBlink step-end infinite;
+  -moz-animation: 1s cursorBlink step-end infinite;
+  -ms-animation: 1s cursorBlink step-end infinite;
+  -o-animation: 1s cursorBlink step-end infinite;
+  animation: 1s cursorBlink step-end infinite;
+}
+
+@keyframes "cursorBlink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
+}
+
+@-moz-keyframes cursorBlink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
+}
+
+@-webkit-keyframes "cursorBlink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
+}
+
+@-ms-keyframes "cursorBlink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
+}
+
+@-o-keyframes "cursorBlink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
 }
 
 /* SECRET HEADER */
@@ -138,6 +186,16 @@ body {
   margin-top: 10em;
 }
 
+#main-photo .info a {
+  text-decoration: none;
+  color: #eee;
+}
+
+#main-photo .info a:hover{
+  text-decoration: none;
+  color: #e37222;
+}
+
 @media(max-width: 1200px){
   #main-photo .info {
     margin-top: 5em;
@@ -172,7 +230,7 @@ body {
   background: #383737;
   padding: 40px 0;
   margin-left: 5%;
-  border-radius: 20px;
+  border-radius: 50px;
   justify-content: center;
   width: 90%;
   min-width: 705px;
@@ -180,7 +238,7 @@ body {
 
 #video .speaker {
   float: left;
-  margin: 19% 0 0 2%;
+  margin: 18.5% 0 0 4%;
   width: 15px;
   height: 80px;
   background: #444;
@@ -189,7 +247,7 @@ body {
 
 #video .home-btn {
   float: right;
-  margin: 21.8% 2.5% 0 0;
+  margin: 20.5% 3.5% 0 0;
   display: inline;
   width: 50px;
   height: 50px;
@@ -210,7 +268,7 @@ body {
   border-radius: 5px;
   vertical-align: middle;
   height: auto;
-  width: 85%;
+  width: 80%;
 }
 
 .video-overlay {
@@ -240,13 +298,41 @@ body {
   transition: 0.5s;
 }
 
+#video-title {
+  color: #323232;
+  position: absolute;
+  margin-left: 10%;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+#video .progress-bar {
+  position: absolute;
+  margin-left: 5.1em;
+  width: 0%;
+  height: 5px;
+  background: #e37222;
+  border-radius: 2px;
+  /*transition: 3s;*/
+}
+
 @media(max-width: 992px){
   #video .home-btn {
-    margin-left: 1%;
+    margin-top: 19.5%;
+    margin-right: 2%
+  }
+
+  #video .speaker {
+    margin-top: 17%;
+    margin-right: 2%
+  }
+
+  #video-title {
+    margin-left: 13%;
   }
 
   #video-player {
-    width: 83%;
+    width: 79%;
     margin-left: 1%
   }
 }
@@ -279,6 +365,11 @@ body {
 
 #console .answer {
   color: #ccc;
+}
+
+#console a {
+  text-decoration: none;
+  color: #e37222;
 }
 
 #console .blinker {
@@ -366,8 +457,7 @@ body {
 }
 
 .card {
-  padding-left: 26px;
-  perspective: 1000px;
+  perspective: 100%;
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -377,6 +467,7 @@ body {
 }
 
 .front {
+  margin-left: 30px;
   background: #eee;
   backface-visibility: hidden;
   transform-style: preserve-3d;
@@ -389,13 +480,14 @@ body {
 }
 
 .back {
+  margin-left: 30px;
   background: #eee;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   position: relative;
   z-index: 0;
   height: 100%;
-  width: 496px;
+  width: 100%;
   transform: rotateX(-180deg);
   transition: all 0.5s ease-out;
   border: 2px solid #e37222;
